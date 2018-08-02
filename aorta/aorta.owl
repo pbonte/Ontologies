@@ -1,0 +1,3206 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY protege "http://protege.stanford.edu/system#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY nrl "http://www.semanticdesktop.org/ontologies/2007/08/15/nrl#" >
+    <!ENTITY tmo "http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#" >
+    <!ENTITY nao "http://www.semanticdesktop.org/ontologies/2007/08/15/nao#" >
+    <!ENTITY pimo "http://www.semanticdesktop.org/ontologies/2007/11/01/pimo#" >
+]>
+
+
+<rdf:RDF xmlns="http://aorta.intec.ugent.be/ontology/aorta.owl#"
+     xml:base="http://aorta.intec.ugent.be/ontology/aorta.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:protege="http://protege.stanford.edu/system#"
+     xmlns:nao="http://www.semanticdesktop.org/ontologies/2007/08/15/nao#"
+     xmlns:pimo="http://www.semanticdesktop.org/ontologies/2007/11/01/pimo#"
+     xmlns:nrl="http://www.semanticdesktop.org/ontologies/2007/08/15/nrl#"
+     xmlns:tmo="http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://protege.stanford.edu/system#role -->
+
+    <owl:AnnotationProperty rdf:about="&protege;role"/>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2007/08/15/nao#description -->
+
+    <owl:AnnotationProperty rdf:about="&nao;description"/>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2007/08/15/nao#prefLabel -->
+
+    <owl:AnnotationProperty rdf:about="&nao;prefLabel"/>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2007/08/15/nrl#inverseProperty -->
+
+    <owl:AnnotationProperty rdf:about="&nrl;inverseProperty"/>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2007/08/15/nrl#maxCardinality -->
+
+    <owl:AnnotationProperty rdf:about="&nrl;maxCardinality"/>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2007/08/15/nrl#minCardinality -->
+
+    <owl:AnnotationProperty rdf:about="&nrl;minCardinality"/>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#dependencyDescription -->
+
+    <owl:AnnotationProperty rdf:about="&tmo;dependencyDescription">
+        <rdfs:label>dependencyDescription</rdfs:label>
+        <rdfs:comment>Endusers can clarify why they created a depedency.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&nao;description"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#taskName -->
+
+    <owl:AnnotationProperty rdf:about="&tmo;taskName">
+        <rdfs:subPropertyOf rdf:resource="&nao;prefLabel"/>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#actionOption -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#actionOption">
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#ActionOption"/>
+        <rdfs:domain rdf:resource="&pimo;Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#actionType -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#actionType">
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#ActionType"/>
+        <rdfs:domain rdf:resource="&pimo;Task"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;stateTypeRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#executedBy -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#executedBy">
+        <rdfs:range rdf:resource="&pimo;Person"/>
+        <rdfs:domain rdf:resource="&pimo;Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#fromLocation -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#fromLocation">
+        <rdfs:subPropertyOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#hasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasAbsoluteLocation -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasAbsoluteLocation">
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#AbsoluteLocation"/>
+        <rdfs:domain rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasActionContainer -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasActionContainer">
+        <rdfs:domain rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#ActionContainer"/>
+        <rdfs:subPropertyOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#hasTaskContainer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasDeviceStatus -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasDeviceStatus">
+        <rdfs:domain rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Device"/>
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#DeviceStatus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasEdge -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasEdge">
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Edge"/>
+        <rdfs:domain rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasLocation">
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasNextRoute -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasNextRoute">
+        <rdfs:domain rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Route"/>
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#RoutePoint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasPersonSkill -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasPersonSkill">
+        <rdfs:subPropertyOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#hasSkill"/>
+        <rdfs:domain rdf:resource="&pimo;Person"/>
+        <rdfs:range rdf:resource="&tmo;Skill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasPoint -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasPoint">
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Point"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Line"/>
+                    <rdf:Description rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Polygon"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasRelativeLocation -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasRelativeLocation">
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#RelativeLocation"/>
+        <rdfs:domain rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasRole -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasRole">
+        <rdfs:domain rdf:resource="&pimo;Person"/>
+        <rdfs:range rdf:resource="&tmo;Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasRoute -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasRoute">
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Route"/>
+        <rdfs:domain rdf:resource="&pimo;Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasSkill -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasSkill">
+        <rdfs:range rdf:resource="&tmo;Skill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasStartAction -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasStartAction">
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Action"/>
+        <rdfs:subPropertyOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#hasStartTask"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasStartTask -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasStartTask">
+        <rdfs:range rdf:resource="&pimo;Task"/>
+        <rdfs:subPropertyOf rdf:resource="&pimo;hasPart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasTaskContainer -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasTaskContainer">
+        <rdfs:subPropertyOf rdf:resource="&pimo;hasPart"/>
+        <rdfs:range rdf:resource="&tmo;TaskContainer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasTaskSkill -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasTaskSkill">
+        <rdfs:subPropertyOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#hasSkill"/>
+        <rdfs:domain rdf:resource="&pimo;Task"/>
+        <rdfs:range rdf:resource="&tmo;Skill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#involvedItem -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#involvedItem">
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Item"/>
+        <rdfs:domain rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#ItemInvolvement"/>
+        <rdfs:subPropertyOf rdf:resource="&pimo;associationMember"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#involvedItemTask -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#involvedItemTask">
+        <rdfs:domain rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#ItemInvolvement"/>
+        <rdfs:range rdf:resource="&pimo;Task"/>
+        <rdfs:subPropertyOf rdf:resource="&pimo;associationMember"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#involvedItems -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#involvedItems">
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#ItemInvolvement"/>
+        <rdfs:domain rdf:resource="&pimo;Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#isAbsoluteSpaceOf -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#isAbsoluteSpaceOf">
+        <rdfs:domain rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#AbsoluteLocation"/>
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+        <owl:inverseOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#hasAbsoluteLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#isRelativeSpaceOf -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#isRelativeSpaceOf">
+        <rdfs:domain rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#RelativeLocation"/>
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+        <owl:inverseOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#hasRelativeLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#isRoomOfPerson -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#isRoomOfPerson">
+        <rdfs:domain rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+        <owl:inverseOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#personRoom"/>
+        <rdfs:range rdf:resource="&pimo;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#nextProcess -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#nextProcess">
+        <rdfs:subPropertyOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#processReference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#personRoom -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#personRoom">
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+        <rdfs:domain rdf:resource="&pimo;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#previousProcess -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#previousProcess">
+        <rdfs:subPropertyOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#processReference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#processReference -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#processReference">
+        <rdfs:domain rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Process"/>
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Process"/>
+        <rdfs:subPropertyOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#reference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#property -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#property">
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#PropertyType"/>
+        <rdfs:domain rdf:resource="&pimo;Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#redirectedBy -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#redirectedBy">
+        <rdfs:range rdf:resource="&pimo;Person"/>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#reference -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#reference"/>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#requires -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#requires">
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#RequirementType"/>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#taskMode -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#taskMode">
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TaskMode"/>
+        <rdfs:domain rdf:resource="&pimo;Task"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;stateTypeRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#toLocation -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#toLocation">
+        <rdfs:subPropertyOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#hasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#transportCode -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#transportCode">
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#transportMode -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#transportMode">
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportMode"/>
+        <rdfs:domain rdf:resource="&pimo;Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#transportType -->
+
+    <owl:ObjectProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#transportType">
+        <rdfs:range rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportType"/>
+        <rdfs:domain rdf:resource="&pimo;Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2007/11/01/pimo#associationMember -->
+
+    <owl:ObjectProperty rdf:about="&pimo;associationMember"/>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2007/11/01/pimo#hasPart -->
+
+    <owl:ObjectProperty rdf:about="&pimo;hasPart"/>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2007/11/01/pimo#partOf -->
+
+    <owl:ObjectProperty rdf:about="&pimo;partOf"/>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#abilityCarrier -->
+
+    <owl:ObjectProperty rdf:about="&tmo;abilityCarrier">
+        <rdfs:label>abilityCarrier</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <nrl:minCardinality>1</nrl:minCardinality>
+        <rdfs:subPropertyOf rdf:resource="&pimo;associationMember"/>
+        <rdfs:range rdf:resource="&tmo;AbilityCarrier"/>
+        <rdfs:domain rdf:resource="&tmo;AbilityCarrierInvolvement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#abilityCarrierInvolvement -->
+
+    <owl:ObjectProperty rdf:about="&tmo;abilityCarrierInvolvement">
+        <rdfs:label>abilityCarrierInvolvement</rdfs:label>
+        <rdfs:range rdf:resource="&tmo;AbilityCarrierInvolvement"/>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <nrl:inverseProperty rdf:resource="&tmo;abilityCarrierTask"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#abilityCarrierRole -->
+
+    <owl:ObjectProperty rdf:about="&tmo;abilityCarrierRole">
+        <rdfs:label>abilityCarrierRole</rdfs:label>
+        <nrl:minCardinality>1</nrl:minCardinality>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:domain rdf:resource="&tmo;AbilityCarrierInvolvement"/>
+        <rdfs:range rdf:resource="&tmo;AbilityCarrierRole"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;stateTypeRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#abilityCarrierTask -->
+
+    <owl:ObjectProperty rdf:about="&tmo;abilityCarrierTask">
+        <rdfs:label>abilityCarrierTask</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:subPropertyOf rdf:resource="&pimo;associationMember"/>
+        <rdfs:domain rdf:resource="&tmo;AbilityCarrierInvolvement"/>
+        <rdfs:range rdf:resource="&tmo;Task"/>
+        <nrl:inverseProperty rdf:resource="&tmo;abilityCarrierInvolvement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#attachment -->
+
+    <owl:ObjectProperty rdf:about="&tmo;attachment">
+        <rdfs:label>attachment</rdfs:label>
+        <rdfs:comment>connects a Task with an Attachment object. Attachments are associations of Things.</rdfs:comment>
+        <rdfs:range rdf:resource="&tmo;Attachment"/>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <nrl:inverseProperty rdf:resource="&tmo;attachmentTask"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#attachmentReference -->
+
+    <owl:ObjectProperty rdf:about="&tmo;attachmentReference">
+        <rdfs:label>attachmentReference</rdfs:label>
+        <nrl:minCardinality>1</nrl:minCardinality>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:subPropertyOf rdf:resource="&pimo;associationMember"/>
+        <rdfs:domain rdf:resource="&tmo;Attachment"/>
+        <rdfs:range rdf:resource="&rdfs;Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#attachmentRole -->
+
+    <owl:ObjectProperty rdf:about="&tmo;attachmentRole">
+        <rdfs:label>attachmentRole</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:domain rdf:resource="&tmo;Attachment"/>
+        <rdfs:range rdf:resource="&tmo;AttachmentRole"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;stateTypeRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#attachmentTask -->
+
+    <owl:ObjectProperty rdf:about="&tmo;attachmentTask">
+        <rdfs:label>attachmentTask</rdfs:label>
+        <rdfs:comment>Inverse of attachment, connects an Attachment Association to the associated Task. Is required for every instance of Attachment.</rdfs:comment>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:subPropertyOf rdf:resource="&pimo;associationMember"/>
+        <rdfs:domain rdf:resource="&tmo;Attachment"/>
+        <rdfs:range rdf:resource="&tmo;Task"/>
+        <nrl:inverseProperty rdf:resource="&tmo;attachment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#containsTask -->
+
+    <owl:ObjectProperty rdf:about="&tmo;containsTask">
+        <rdfs:label>containsTask</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&pimo;hasPart"/>
+        <rdfs:range rdf:resource="&tmo;Task"/>
+        <rdfs:domain rdf:resource="&tmo;TaskContainer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#contextTask -->
+
+    <owl:ObjectProperty rdf:about="&tmo;contextTask">
+        <rdfs:label>contextTask</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:range rdf:resource="&tmo;Task"/>
+        <nrl:inverseProperty rdf:resource="&tmo;contextThread"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#contextThread -->
+
+    <owl:ObjectProperty rdf:about="&tmo;contextThread">
+        <rdfs:label>contextThread</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:range rdf:resource="http://ontologies.opendfki.de/repos/ontologies/wcon/workcontext#MediumTermContextThread"/>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <nrl:inverseProperty rdf:resource="&tmo;contextTask"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#createdBy -->
+
+    <owl:ObjectProperty rdf:about="&tmo;createdBy">
+        <rdfs:range rdf:resource="&pimo;Person"/>
+        <rdfs:domain rdf:resource="&tmo;Attachment"/>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#delegability -->
+
+    <owl:ObjectProperty rdf:about="&tmo;delegability">
+        <rdfs:label>delegability</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:range rdf:resource="&tmo;Delegability"/>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;timemanagement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#dependency -->
+
+    <owl:ObjectProperty rdf:about="&tmo;dependency">
+        <rdfs:label>dependency</rdfs:label>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:range rdf:resource="&tmo;TaskDependency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#dependencyDescription -->
+
+    <owl:ObjectProperty rdf:about="&tmo;dependencyDescription">
+        <rdfs:label>dependencyDescription</rdfs:label>
+        <rdfs:comment>Endusers can clarify why they created a depedency.</rdfs:comment>
+        <rdfs:domain rdf:resource="&tmo;TaskDependency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#dependencyMemberA -->
+
+    <owl:ObjectProperty rdf:about="&tmo;dependencyMemberA">
+        <rdfs:label>dependencyMemberA</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:comment>The semantic of this relation is defined in the sublclass of undirected Dependency on which this property is stated. (The subject of the statment where this property is expressed)</rdfs:comment>
+        <nrl:minCardinality>1</nrl:minCardinality>
+        <rdfs:subPropertyOf rdf:resource="&pimo;associationMember"/>
+        <rdfs:range rdf:resource="&tmo;Task"/>
+        <rdfs:domain rdf:resource="&tmo;TaskDependency"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;taskReference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#dependencyMemberB -->
+
+    <owl:ObjectProperty rdf:about="&tmo;dependencyMemberB">
+        <rdfs:label>dependencyMemberB</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <nrl:minCardinality>1</nrl:minCardinality>
+        <rdfs:comment>The semantic of this relation is defined in the sublclass of undirected Dependency on which this property is stated. (The subject of the statment where this property is expressed)</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&pimo;associationMember"/>
+        <rdfs:range rdf:resource="&tmo;Task"/>
+        <rdfs:domain rdf:resource="&tmo;TaskDependency"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;taskReference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#dependencyOrderNumber -->
+
+    <owl:ObjectProperty rdf:about="&tmo;dependencyOrderNumber">
+        <rdfs:domain rdf:resource="&tmo;TaskDependency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#dependencyType -->
+
+    <owl:ObjectProperty rdf:about="&tmo;dependencyType">
+        <rdfs:label>dependencyType</rdfs:label>
+        <nrl:minCardinality>1</nrl:minCardinality>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:range rdf:resource="&rdfs;Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#importance -->
+
+    <owl:ObjectProperty rdf:about="&tmo;importance">
+        <rdfs:label>importance</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:range rdf:resource="&tmo;Importance"/>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;timemanagement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#involvedPerson -->
+
+    <owl:ObjectProperty rdf:about="&tmo;involvedPerson">
+        <rdfs:range rdf:resource="&pimo;Person"/>
+        <rdfs:subPropertyOf rdf:resource="&pimo;associationMember"/>
+        <rdfs:domain rdf:resource="&tmo;PersonInvolvement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#involvedPersonRole -->
+
+    <owl:ObjectProperty rdf:about="&tmo;involvedPersonRole">
+        <rdfs:label>involvedPersonRole</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <nrl:minCardinality>1</nrl:minCardinality>
+        <rdfs:domain rdf:resource="&tmo;PersonInvolvement"/>
+        <rdfs:range rdf:resource="&tmo;PersonInvolvementRole"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;stateTypeRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#involvedPersonTask -->
+
+    <owl:ObjectProperty rdf:about="&tmo;involvedPersonTask">
+        <rdfs:subPropertyOf rdf:resource="&pimo;associationMember"/>
+        <rdfs:domain rdf:resource="&tmo;PersonInvolvement"/>
+        <rdfs:range rdf:resource="&tmo;Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#involvedPersons -->
+
+    <owl:ObjectProperty rdf:about="&tmo;involvedPersons">
+        <rdfs:range rdf:resource="&tmo;PersonInvolvement"/>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#logEntry -->
+
+    <owl:ObjectProperty rdf:about="&tmo;logEntry">
+        <rdfs:label>logEntry</rdfs:label>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:range rdf:resource="&rdfs;Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#nextReviewIntervall -->
+
+    <owl:ObjectProperty rdf:about="&tmo;nextReviewIntervall">
+        <rdfs:label>nextReviewIntervall</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#priority -->
+
+    <owl:ObjectProperty rdf:about="&tmo;priority">
+        <rdfs:range rdf:resource="&tmo;Priority"/>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;timemanagement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#stateTypeRole -->
+
+    <owl:ObjectProperty rdf:about="&tmo;stateTypeRole">
+        <rdfs:label>stateTypeRole</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:range rdf:resource="&rdfs;Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#subTask -->
+
+    <owl:ObjectProperty rdf:about="&tmo;subTask">
+        <rdfs:label>subTask</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&pimo;hasPart"/>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:range rdf:resource="&tmo;Task"/>
+        <nrl:inverseProperty rdf:resource="&tmo;superTask"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#subTaskOrdering -->
+
+    <owl:ObjectProperty rdf:about="&tmo;subTaskOrdering">
+        <rdfs:label>subTaskOrdering</rdfs:label>
+        <rdfs:comment>Ordering of the subtasks listed in the tmo:subTasks property of this Task. This is only for ordering/sorting in GUIs, the semantic relation is defined in subTasks, and if this and subTasks differ, subTasks is the correct list.</rdfs:comment>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:range rdf:resource="&rdf;List"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#superTask -->
+
+    <owl:ObjectProperty rdf:about="&tmo;superTask">
+        <rdfs:label>superTask</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:subPropertyOf rdf:resource="&pimo;partOf"/>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:range rdf:resource="&tmo;Task"/>
+        <nrl:inverseProperty rdf:resource="&tmo;subTask"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;taskReference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#targetCompletion -->
+
+    <owl:ObjectProperty rdf:about="&tmo;targetCompletion">
+        <rdfs:domain rdf:resource="&pimo;Task"/>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#taskGoal -->
+
+    <owl:ObjectProperty rdf:about="&tmo;taskGoal">
+        <rdfs:label>taskGoal</rdfs:label>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:range rdf:resource="&rdfs;Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#taskPrivacyState -->
+
+    <owl:ObjectProperty rdf:about="&tmo;taskPrivacyState">
+        <rdfs:label>taskPrivacyState</rdfs:label>
+        <rdfs:comment>For the separation between professional and private purpose of a task, this attribute provides with the values &quot;professional/private&quot; a high level separation of privacy in terms of setting distribution rights to other users for the task.
+This separation may arise as a general Nepomuk issue and may therefore be handled in conjunction with a privacy preserving SSD architecture.</rdfs:comment>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:range rdf:resource="&tmo;TaskPrivacyState"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;stateTypeRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#taskReference -->
+
+    <owl:ObjectProperty rdf:about="&tmo;taskReference">
+        <rdfs:label>taskReference</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:subPropertyOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#reference"/>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:range rdf:resource="&tmo;Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#taskSource -->
+
+    <owl:ObjectProperty rdf:about="&tmo;taskSource">
+        <rdfs:label>taskSource</rdfs:label>
+        <rdfs:comment>here can be stated from which sources a task was derived. e.g from another task or from an task pattern</rdfs:comment>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;taskReference"/>
+        <rdfs:range rdf:resource="&rdfs;Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#taskState -->
+
+    <owl:ObjectProperty rdf:about="&tmo;taskState">
+        <rdfs:label>taskState</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <nrl:minCardinality>1</nrl:minCardinality>
+        <rdfs:comment>The task state describes the current state of the task as described in Section 5.2.7.</rdfs:comment>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:range rdf:resource="&tmo;TaskState"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;stateTypeRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#taskStateChangesFrom -->
+
+    <owl:ObjectProperty rdf:about="&tmo;taskStateChangesFrom">
+        <rdfs:label>taskStateChangesFrom</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:range rdf:resource="&tmo;TaskState"/>
+        <rdfs:domain rdf:resource="&tmo;TaskState"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;stateTypeRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#taskStateChangesTo -->
+
+    <owl:ObjectProperty rdf:about="&tmo;taskStateChangesTo">
+        <rdfs:label>taskStateChangesTo</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:range rdf:resource="&tmo;TaskState"/>
+        <rdfs:domain rdf:resource="&tmo;TaskState"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;stateTypeRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#taskTransmission -->
+
+    <owl:ObjectProperty rdf:about="&tmo;taskTransmission">
+        <rdfs:label>taskTransmission</rdfs:label>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:range rdf:resource="&tmo;TaskTransmission"/>
+        <nrl:inverseProperty rdf:resource="&tmo;transmissionTask"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#timemanagement -->
+
+    <owl:ObjectProperty rdf:about="&tmo;timemanagement"/>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#transmissionFrom -->
+
+    <owl:ObjectProperty rdf:about="&tmo;transmissionFrom">
+        <rdfs:label>transmissionFrom</rdfs:label>
+        <nrl:minCardinality>1</nrl:minCardinality>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:range rdf:resource="&pimo;Person"/>
+        <rdfs:domain rdf:resource="&tmo;TaskTransmission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#transmissionState -->
+
+    <owl:ObjectProperty rdf:about="&tmo;transmissionState">
+        <rdfs:label>transmissionState</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <nrl:minCardinality>1</nrl:minCardinality>
+        <rdfs:domain rdf:resource="&tmo;TaskTransmission"/>
+        <rdfs:range rdf:resource="&tmo;TransmissionState"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;stateTypeRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#transmissionStateChangesFrom -->
+
+    <owl:ObjectProperty rdf:about="&tmo;transmissionStateChangesFrom">
+        <rdfs:label>transmissionStateChangesFrom</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:range rdf:resource="&tmo;TransmissionState"/>
+        <rdfs:domain rdf:resource="&tmo;TransmissionState"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;stateTypeRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#transmissionStateChangesTo -->
+
+    <owl:ObjectProperty rdf:about="&tmo;transmissionStateChangesTo">
+        <rdfs:label>transmissionStateChangesTo</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:range rdf:resource="&tmo;TransmissionState"/>
+        <rdfs:domain rdf:resource="&tmo;TransmissionState"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;stateTypeRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#transmissionTask -->
+
+    <owl:ObjectProperty rdf:about="&tmo;transmissionTask">
+        <rdfs:label>transmissionTask</rdfs:label>
+        <nrl:minCardinality>1</nrl:minCardinality>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:range rdf:resource="&tmo;Task"/>
+        <rdfs:domain rdf:resource="&tmo;TaskTransmission"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;taskReference"/>
+        <nrl:inverseProperty rdf:resource="&tmo;taskTransmission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#transmissionTo -->
+
+    <owl:ObjectProperty rdf:about="&tmo;transmissionTo">
+        <rdfs:label>transmissionTo</rdfs:label>
+        <nrl:minCardinality>1</nrl:minCardinality>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:range rdf:resource="&pimo;Person"/>
+        <rdfs:domain rdf:resource="&tmo;TaskTransmission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#transmissionType -->
+
+    <owl:ObjectProperty rdf:about="&tmo;transmissionType">
+        <rdfs:label>transmissionType</rdfs:label>
+        <nrl:minCardinality>1</nrl:minCardinality>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:domain rdf:resource="&tmo;TaskTransmission"/>
+        <rdfs:range rdf:resource="&tmo;TransmissionType"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;stateTypeRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#urgency -->
+
+    <owl:ObjectProperty rdf:about="&tmo;urgency">
+        <rdfs:label>urgency</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:range rdf:resource="&tmo;Urgency"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;timemanagement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#availableTime -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#availableTime">
+        <rdfs:subPropertyOf rdf:resource="&tmo;dateTime"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#bedSpeed -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#bedSpeed">
+        <rdfs:subPropertyOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#speed"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#carSpeed -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#carSpeed">
+        <rdfs:subPropertyOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#speed"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#completionComment -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#completionComment">
+        <rdfs:domain rdf:resource="&pimo;Task"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;progress"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#delay -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#delay">
+        <rdfs:domain rdf:resource="&pimo;Task"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;progress"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#distance -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#distance">
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#externalId -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#externalId">
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasComment -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasComment">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasX -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasX">
+        <rdfs:domain rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Point"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasXCoordinate -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasXCoordinate">
+        <rdfs:domain rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Coordinate"/>
+        <rdfs:subPropertyOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#hasX"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasY -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasY">
+        <rdfs:domain rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Point"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#hasYCoordinate -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#hasYCoordinate">
+        <rdfs:domain rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Coordinate"/>
+        <rdfs:subPropertyOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#hasY"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#id -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#id">
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#learnedDelay -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#learnedDelay">
+        <rdfs:subPropertyOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#delay"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#name">
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#speed -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#speed">
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#time -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#time">
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#walkingSpeed -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#walkingSpeed">
+        <rdfs:subPropertyOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#speed"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#wheelchairSpeed -->
+
+    <owl:DatatypeProperty rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#wheelchairSpeed">
+        <rdfs:subPropertyOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#speed"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2007/08/15/nao#description -->
+
+    <owl:DatatypeProperty rdf:about="&nao;description"/>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2007/11/01/pimo#taskDueTime -->
+
+    <owl:DatatypeProperty rdf:about="&pimo;taskDueTime"/>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#actualCompletion -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;actualCompletion">
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;progress"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#actualEndTime -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;actualEndTime">
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;actualTime"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;endTime"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#actualStartTime -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;actualStartTime">
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;actualTime"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;startTime"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#actualTime -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;actualTime">
+        <rdfs:subPropertyOf rdf:resource="&tmo;dateTime"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#dateTime -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;dateTime">
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#dependencyOrderNumber -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;dependencyOrderNumber">
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#dueDate -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;dueDate">
+        <rdfs:subPropertyOf rdf:resource="&pimo;taskDueTime"/>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;dateTime"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#endTime -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;endTime">
+        <rdfs:subPropertyOf rdf:resource="&tmo;dateTime"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#indexPosition -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;indexPosition">
+        <rdfs:label>indexPosition</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#lastReviewDate -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;lastReviewDate">
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;dateTime"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#nextReviewIntervall -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;nextReviewIntervall">
+        <rdfs:label>nextReviewIntervall</rdfs:label>
+        <nrl:maxCardinality>1</nrl:maxCardinality>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#progress -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;progress">
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#receiveDateTime -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;receiveDateTime">
+        <rdfs:domain rdf:resource="&tmo;TaskTransmission"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;dateTime"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#sendDateTime -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;sendDateTime">
+        <rdfs:domain rdf:resource="&tmo;TaskTransmission"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;dateTime"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#startTime -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;startTime">
+        <rdfs:subPropertyOf rdf:resource="&tmo;dateTime"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#targetCompletion -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;targetCompletion">
+        <rdfs:subPropertyOf rdf:resource="&tmo;progress"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#targetEndTime -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;targetEndTime">
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;endTime"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;targetTime"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#targetStartTime -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;targetStartTime">
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;startTime"/>
+        <rdfs:subPropertyOf rdf:resource="&tmo;targetTime"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#targetTime -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;targetTime">
+        <rdfs:subPropertyOf rdf:resource="&tmo;dateTime"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#taskDescription -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;taskDescription">
+        <rdfs:label>taskDescription</rdfs:label>
+        <rdfs:comment>The task description helps users to understand the goal and the proceeding of a task. It can also describe the context of a task. The task description is composed at minimum of a summary of what is done to reach the goal. The task description is the main source for identifying related information, e.g., suitable patterns.
+A Task Description can be either an informal, described textual content (TextualDescription) or it can be a more formally structured representation (FormalDescription).
+Technology considerations: Informal descriptions allow for text similarity processing, a formal description allows for applying case based similarity measures.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&nao;description"/>
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#taskId -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;taskId">
+        <rdfs:domain rdf:resource="&tmo;Task"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#taskName -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;taskName">
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#timemanagement -->
+
+    <owl:DatatypeProperty rdf:about="&tmo;timemanagement">
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#AbsoluteLocation -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#AbsoluteLocation">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Action -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Action">
+        <rdfs:subClassOf rdf:resource="&tmo;Task"/>
+        <nao:description>Models the action in the tasks</nao:description>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#ActionContainer -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#ActionContainer">
+        <rdfs:subClassOf rdf:resource="&tmo;TaskContainer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#ActionOption -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#ActionOption">
+        <rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#ActionType -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#ActionType">
+        <rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#BathRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#BathRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#BedRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#BedRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#CardiologyRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#CardiologyRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#MedicalRoom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Carrier -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Carrier">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#ActionOption"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#ConsultationRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#ConsultationRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#MedicalRoom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Context -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Context">
+        <rdfs:subClassOf rdf:resource="&pimo;Association"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Coordinate -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Coordinate">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#hasXCoordinate"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;double"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#hasYCoordinate"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;double"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Point"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#DeliveryDeterminedProcess -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#DeliveryDeterminedProcess">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Device -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Device"/>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#DeviceStatus -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#DeviceStatus">
+        <rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#DressingRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#DressingRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Edge -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Edge">
+        <rdfs:subClassOf rdf:resource="&pimo;Association"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Elevator -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Elevator">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#EmergencyRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#EmergencyRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#MedicalRoom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#ExtendedRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#ExtendedRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#GeriatricRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#GeriatricRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#MedicalRoom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#GoodsTransport -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#GoodsTransport">
+        <rdfs:subClassOf rdf:resource="&tmo;Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Hall -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Hall">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#IODevice -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#IODevice">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Item -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Item"/>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#ItemInvolvement -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#ItemInvolvement">
+        <rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Kitchen -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Kitchen">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Line -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Line">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#AbsoluteLocation"/>
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#RelativeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#LivingRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#LivingRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Location -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Location"/>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Man -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Man">
+        <rdfs:subClassOf rdf:resource="&pimo;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#MaternityRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#MaternityRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#MedicalRoom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#MedicalRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#MedicalRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#MobileDevice -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#MobileDevice">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#NurseRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#NurseRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#OfficeRoom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#ObservationRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#ObservationRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#MedicalRoom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#OfficeRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#OfficeRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#OperatingRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#OperatingRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#MedicalRoom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#OrthopedicRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#OrthopedicRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#MedicalRoom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#PatientRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#PatientRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#BedRoom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#PatientTransport -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#PatientTransport">
+        <rdfs:subClassOf rdf:resource="&tmo;Task"/>
+        <rdfs:comment>Task defined for transporting patients</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#PediatryRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#PediatryRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#MedicalRoom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#PickupDeterminedProcess -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#PickupDeterminedProcess">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Point -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Point">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#hasX"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;double"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#hasY"/>
+                        <owl:someValuesFrom rdf:resource="&xsd;double"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#AbsoluteLocation"/>
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#RelativeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Polygon -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Polygon">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#AbsoluteLocation"/>
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#RelativeLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#PortableDevice -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#PortableDevice">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Prediction -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Prediction">
+        <rdfs:subClassOf rdf:resource="&tmo;StateTypeRole"/>
+        <rdfs:comment>Abstract class for various types of predictions coming from the self learning module</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#PreparationRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#PreparationRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#MedicalRoom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Process -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Process">
+        <nao:description>Models a process. Processes can contain one or more tasks. All tasks can be put in a TaskContainer. The first task is reference through the hasStartTask relation</nao:description>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#PropertyType -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#PropertyType">
+        <rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#PsychiatryRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#PsychiatryRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#MedicalRoom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#RadiologyRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#RadiologyRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#MedicalRoom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#RecoveryRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#RecoveryRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#MedicalRoom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#RelativeLocation -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#RelativeLocation">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Reminder -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Reminder">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#ActionOption"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#RequirementType -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#RequirementType">
+        <rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Restaurant -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Restaurant">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#RevalidationRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#RevalidationRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#MedicalRoom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Route -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Route"/>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#RoutePoint -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#RoutePoint">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#SemiCriticalRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#SemiCriticalRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Space -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Space">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Stairway -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Stairway">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#StorageRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#StorageRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#TaskMode -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#TaskMode">
+        <rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#TaskToBeLate -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#TaskToBeLate">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Prediction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#TechnicalRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#TechnicalRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode">
+        <rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#TransportMode -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportMode">
+        <rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+        <rdfs:comment>R</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#TransportSpeedInfo -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportSpeedInfo">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Context"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#TransportType -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportType">
+        <rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#UtilityRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#UtilityRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#WaitingRoom -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#WaitingRoom">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Warning -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Warning">
+        <rdfs:subClassOf rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#ActionOption"/>
+    </owl:Class>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Woman -->
+
+    <owl:Class rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Woman">
+        <rdfs:subClassOf rdf:resource="&pimo;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.opendfki.de/repos/ontologies/wcon/workcontext#MediumTermContextThread -->
+
+    <owl:Class rdf:about="http://ontologies.opendfki.de/repos/ontologies/wcon/workcontext#MediumTermContextThread"/>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2007/11/01/pimo#Association -->
+
+    <owl:Class rdf:about="&pimo;Association"/>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2007/11/01/pimo#Collection -->
+
+    <owl:Class rdf:about="&pimo;Collection"/>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2007/11/01/pimo#Person -->
+
+    <owl:Class rdf:about="&pimo;Person"/>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2007/11/01/pimo#Task -->
+
+    <owl:Class rdf:about="&pimo;Task"/>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#AbilityCarrier -->
+
+    <owl:Class rdf:about="&tmo;AbilityCarrier">
+        <rdfs:label>AbilityCarrier</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+        <protege:role>abstract</protege:role>
+        <rdfs:comment>AbilityCarrier is an abstract class which circumferences all entities which can take action or which are somehow involved in tasks.
+This is in other task conceptualizations rather named &quot;actor&quot;. But here it is named AbilityCarrier because it is not neccessarily &quot;active&quot;.
+
+The execution of a task relies on certain abilities. The abstract concept of
+Abilitiy_Carriers circumference all those more concrete concepts
+of which one can think of while working on tasks. Using this abstract
+class enables to substitute such Ability Carrier&apos;s in the process of
+generating patterns from task instances and vice versa in the process of
+instantiating task instances from patterns without violating the schema.
+With this attribute, a series of ability carrying entities (Person, Role,
+Skill, OrganizationalUnit, InformalDescribedAbility)
+and the role of involvement (required, request, used) is enabled. The role
+hereby allows specifying how the ability carrying entity is or was
+involved.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#AbilityCarrierInvolvement -->
+
+    <owl:Class rdf:about="&tmo;AbilityCarrierInvolvement">
+        <rdfs:label>AbilityCarrierInvolvement</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&pimo;Association"/>
+        <rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+        <rdfs:comment>The class AbilityCarrier_Involvement ties together an AbilityCarrier with an AbilityCarrier_Role. This is a role based modelling approach. An n-ary relation is realized.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#AbilityCarrierRole -->
+
+    <owl:Class rdf:about="&tmo;AbilityCarrierRole">
+        <rdfs:label>AbilityCarrierRole</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;StateTypeRole"/>
+        <rdfs:comment>Examples instances  of AbilityCarrirRoles are e.g. &quot;requested&quot;, &quot;required&quot; and &quot;used&quot; which further specify the type a person was involved in.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#AgentAbilityCarrier -->
+
+    <owl:Class rdf:about="&tmo;AgentAbilityCarrier">
+        <rdfs:label>AgentAbilityCarrier</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;AbilityCarrier"/>
+        <protege:role>abstract</protege:role>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#AssociationDependency -->
+
+    <owl:Class rdf:about="&tmo;AssociationDependency">
+        <rdfs:label>AssociationDependency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;UndirectedDependency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#Attachment -->
+
+    <owl:Class rdf:about="&tmo;Attachment">
+        <rdfs:label>Attachment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&pimo;Association"/>
+        <rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+        <rdfs:comment>By means of attachments, references to other resources can be established. Resources are information objects. Every Thing, which can be referenced, on the SSD is an information object. In contrast to the usual SSD references/associations, here additionally information can be specified. Further metadata about the role an attachment plays can be stated by means of instances of AttachmentRole. It can be expressed what the Role of attachment is e.g., regarding &quot;desired/requested&quot; or &quot;required&quot; or &quot;potentially useful / somehow related&quot; or &quot;used/produced/achieved&quot;. The reference property models the actual link to the attached piece of information.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#AttachmentRole -->
+
+    <owl:Class rdf:about="&tmo;AttachmentRole">
+        <rdfs:label>AttachmentRole</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;StateTypeRole"/>
+        <rdfs:comment>AttachmentRoles further specify the type of how an attachment relates to a task. Example instances  of AttachmentRoles are e.g. &quot;desired_request&quot;, &quot;required&quot; and &quot;used&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#Delegability -->
+
+    <owl:Class rdf:about="&tmo;Delegability">
+        <rdfs:label>Delegability</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;StateTypeRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#Importance -->
+
+    <owl:Class rdf:about="&tmo;Importance">
+        <rdfs:label>Importance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;StateTypeRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#Interdependence -->
+
+    <owl:Class rdf:about="&tmo;Interdependence">
+        <rdfs:label>Interdependence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;UndirectedDependency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#PersonInvolvement -->
+
+    <owl:Class rdf:about="&tmo;PersonInvolvement">
+        <rdfs:label>PersonInvolvement</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&pimo;Association"/>
+        <rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+        <rdfs:comment>PersonInvolvement  realizes n-ary associations to Persons which are realtedd to an task. The involvement is further characterized by an PersonTaskRole.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#PersonInvolvementRole -->
+
+    <owl:Class rdf:about="&tmo;PersonInvolvementRole">
+        <rdfs:label>PersonInvolvementRole</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;StateTypeRole"/>
+        <rdfs:comment>They further specify the type a person was related to an task.
+Examples instances  of AttachmentRoles are e.g.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#PredecessorDependency -->
+
+    <owl:Class rdf:about="&tmo;PredecessorDependency">
+        <rdfs:label>PredecessorDependency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;PredecessorSuccessorDependency"/>
+        <rdfs:comment>In a  PredecessorDependency the dependencyMemberA is the task which is to be executed before dependencyMemberB.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#PredecessorSuccessorDependency -->
+
+    <owl:Class rdf:about="&tmo;PredecessorSuccessorDependency">
+        <rdfs:label>PredecessorSuccessorDependency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;TaskDependency"/>
+        <rdfs:comment>The PredecessorSuccessorDependency enables a directed relation between task. By means of the concrete sublcasses one can further distinguish from which point of view this relation is created.</rdfs:comment>
+        <protege:role>abstract</protege:role>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#Priority -->
+
+    <owl:Class rdf:about="&tmo;Priority">
+        <rdfs:label>Priority</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;StateTypeRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#Role -->
+
+    <owl:Class rdf:about="&tmo;Role">
+        <rdfs:label>Role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;AbilityCarrier"/>
+        <rdfs:comment>examples: Architect, Developer, ...</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#SimilarityDependence -->
+
+    <owl:Class rdf:about="&tmo;SimilarityDependence">
+        <rdfs:label>SimilarityDependence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;UndirectedDependency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#Skill -->
+
+    <owl:Class rdf:about="&tmo;Skill">
+        <rdfs:label>Skill</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;AbilityCarrier"/>
+        <rdfs:comment>examples are e.g. technologies like Java, XML,  ...</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#StateTypeRole -->
+
+    <owl:Class rdf:about="&tmo;StateTypeRole">
+        <rdfs:label>StateTypeRole</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+        <rdfs:comment>StateTypeRole is an abstract class which subsumes various other classes which represent &quot;states&quot; or roles e.g. in role based modelling conpetualisations.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#SuccessorDependency -->
+
+    <owl:Class rdf:about="&tmo;SuccessorDependency">
+        <rdfs:label>SuccessorDependency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;PredecessorSuccessorDependency"/>
+        <rdfs:comment>In a SuccessorrDependency the dependencyMemberA is the task which is to be executed after dependencyMemberB.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#SuperSubTaskDependency -->
+
+    <owl:Class rdf:about="&tmo;SuperSubTaskDependency">
+        <rdfs:label>SuperSubTaskDependency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;TaskDependency"/>
+        <rdfs:comment>By means of the SuperSubTaskDependency one can further describe the subtask-supertask relation .e.g by an descriptin. This enables an n-ary relation between subtask and supertask.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#Task -->
+
+    <owl:Class rdf:about="&tmo;Task">
+        <rdfs:label>Task</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&pimo;Task"/>
+        <nao:description>Tasks can contain one or actions</nao:description>
+        <rdfs:comment>The tmo:task is the central entitiey of the tmo. Task can range from vague things to be possibly done in e distant future to concrete things to be done in a precise forseeable manner. It is not unrealisitc to assume that knowledge worker have hundred or more tasks a day.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#TaskContainer -->
+
+    <owl:Class rdf:about="&tmo;TaskContainer">
+        <rdfs:label>TaskContainer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&pimo;Collection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#TaskDependency -->
+
+    <owl:Class rdf:about="&tmo;TaskDependency">
+        <rdfs:label>TaskDependency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&pimo;Association"/>
+        <rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+        <rdfs:comment>Between the tasks, further dependencies may exist. These dependencies allow for a graph network structure. For ease of use, dependencies should not be too frequent, otherwise the primarily character of a hierarchy would be diminished and a consequent graph representation would become considerable. However, such a graph representation has other drawbacks, the user is likely to loose oversight, tree structures are more helpful in structuring the work.
+
+A dependency relation is characterized by the type of the relation and by an additional description. There are different possibilities for dependency relations between tasks.</rdfs:comment>
+        <protege:role>abstract</protege:role>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#TaskPrivacyState -->
+
+    <owl:Class rdf:about="&tmo;TaskPrivacyState">
+        <rdfs:label>TaskPrivacyState</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;StateTypeRole"/>
+        <rdfs:comment>Privacy Status serves for the separation between a professional and a private purpose of a task. This attribute provides with the values &quot;professional/private&quot; a high-level separation of privacy in terms of setting distribution and access
+rights to other users for the task.
+This separation may arise as a general Nepomuk issue and may therefore be handled in conjunction with a privacy preserving SSD architecture.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#TaskState -->
+
+    <owl:Class rdf:about="&tmo;TaskState">
+        <rdfs:label>TaskState</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;StateTypeRole"/>
+        <rdfs:comment>The task state property allows tracking a task during its lifecycle. Initially the state is just &quot;created&quot;. 
+The TaskState class was modeled so that for each state can be set which the typical prior and posterior states are. This has the advantage that e.g. a UI can retrieve the allowed states at runtime from the ontology; rather can having this potentially changing knowledge hard coded. But the prior and posterior states are only defaults; the human user is always free to change the state.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#TaskTransmission -->
+
+    <owl:Class rdf:about="&tmo;TaskTransmission">
+        <rdfs:label>TaskTransmission</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+        <rdfs:comment>On the SSD, tasks are not restricted to one person and may cross from
+the PTM of one person to the PTM of another. With transmission, we
+refer to the process of sending a task from one person (sender) to one
+or more other persons (receiver(s)) (see Section 5.2.1.3 Task
+Transmission). Task delegation and task transfer are two special kinds of
+task transmission which are described at the end of this section. In
+addition, the collaborative task is realized by task transmission.
+For the process of sending a task, some information is required. This
+information is also modelled in the task ontology. This information is still
+useful after the process of sending a task was completed. Task Delegation is a process where the sender of the task restricts the
+access rights of the receiver. This includes the right to distribute further
+this task and additionally the obligation to give feedback to the sender.
+The person that receives a task by delegation usually has not the full
+control about the task. The attributes described in the following section
+have the purpose to enable such &quot;access rights&quot;. The receiver will also
+probably have obligations regarding what to report to whom at which
+time.
+In contrast, the simplest case is that all rights are granted to the receiver
+and there is no feedback desired by the sender. What to do with the task
+may be apparent by the organization context, or it may be left to the
+receiver. This is like sending an email but with the advantage that the
+information is transferred in the &quot;task space&quot; of the participating persons.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#TransmissionState -->
+
+    <owl:Class rdf:about="&tmo;TransmissionState">
+        <rdfs:label>TransmissionState</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;StateTypeRole"/>
+        <rdfs:comment>States a task can go through during transmission of an task.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#TransmissionType -->
+
+    <owl:Class rdf:about="&tmo;TransmissionType">
+        <rdfs:label>TransmissionType</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;StateTypeRole"/>
+        <rdfs:comment>By means of the TransmissionType one can distinguish several different types which might imply a different business logic. e.g. delegation can mean that the results of the task fulfillment care to be reported back to the sender of the task.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#UndirectedDependency -->
+
+    <owl:Class rdf:about="&tmo;UndirectedDependency">
+        <rdfs:label>UndirectedDependency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;TaskDependency"/>
+        <rdfs:comment>A symmetric relations between task.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticdesktop.org/ontologies/2008/05/20/tmo#Urgency -->
+
+    <owl:Class rdf:about="&tmo;Urgency">
+        <rdfs:label>Urgency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&tmo;StateTypeRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#List -->
+
+    <owl:Class rdf:about="&rdf;List"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Resource -->
+
+    <owl:Class rdf:about="&rdfs;Resource"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Accepted -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Accepted">
+        <rdf:type rdf:resource="&tmo;TaskState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Assigned -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Assigned">
+        <rdf:type rdf:resource="&tmo;TaskState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#AssitanceSecondEmployee -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#AssitanceSecondEmployee">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">107</id>
+        <externalId>A2M</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Away -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Away">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Back -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Back">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Bed -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Bed">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportMode"/>
+        <id rdf:datatype="&xsd;integer">125</id>
+        <externalId>BED</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#BedWithBedMover -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#BedWithBedMover">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportMode"/>
+        <id rdf:datatype="&xsd;integer">120</id>
+        <externalId>BMV</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#BedWithMonitor -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#BedWithMonitor">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportMode"/>
+        <id rdf:datatype="&xsd;integer">124</id>
+        <externalId>BMM</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#CPV -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#CPV">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">47</id>
+        <externalId>4CPV</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Cancelled -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Cancelled">
+        <rdf:type rdf:resource="&tmo;TaskState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#CareStillInProgress -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#CareStillInProgress">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">115</id>
+        <externalId>VNB</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#ChangeTransportBed -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#ChangeTransportBed">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">125</id>
+        <externalId>WBED</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#ChangeTransportBedMover -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#ChangeTransportBedMover">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">131</id>
+        <externalId>WBMV</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#ChangeTransportWheelChair -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#ChangeTransportWheelChair">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">123</id>
+        <externalId>WROL</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Code -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Code">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#RequirementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Combinable -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Combinable">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportMode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#ContrastFluid -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#ContrastFluid">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportMode"/>
+        <id rdf:datatype="&xsd;integer">121</id>
+        <externalId>CONTR</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Delayed -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Delayed">
+        <rdf:type rdf:resource="&tmo;TaskState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Delivery -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Delivery">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#ActionType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#DeviceFault -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#DeviceFault">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#DeviceStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#DeviceOff -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#DeviceOff">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#DeviceStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#DeviceOn -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#DeviceOn">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#DeviceStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#DoctorIsPresent -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#DoctorIsPresent">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">117</id>
+        <externalId>DIA</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#EmptyBed -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#EmptyBed">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportMode"/>
+        <id rdf:datatype="&xsd;integer">122</id>
+        <externalId>LGBED</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Finished -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Finished">
+        <rdf:type rdf:resource="&tmo;TaskState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#GeriatricChair -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#GeriatricChair">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportMode"/>
+        <id rdf:datatype="&xsd;integer">67</id>
+        <externalId>GZ</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Gloves -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Gloves">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#RequirementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#GroupPatients -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#GroupPatients">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportMode"/>
+        <id rdf:datatype="&xsd;integer">123</id>
+        <externalId>GRP</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#InProgress -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#InProgress">
+        <rdf:type rdf:resource="&tmo;TaskState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Interrupted -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Interrupted">
+        <rdf:type rdf:resource="&tmo;TaskState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#LiftDefect -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#LiftDefect">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">114</id>
+        <externalId>OLD</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#NoOxygenTank -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#NoOxygenTank">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">110</id>
+        <externalId>VGO2</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#NoPatientStrap -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#NoPatientStrap">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">108</id>
+        <externalId>PBN</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#NotReadyForTransport -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#NotReadyForTransport">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">122</id>
+        <externalId>PNKT</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Notified -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Notified">
+        <rdf:type rdf:resource="&tmo;TaskState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#OwnWheelchair -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#OwnWheelchair">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportMode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Oxygen -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Oxygen">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#RequirementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#PatientIsEating -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#PatientIsEating">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">116</id>
+        <externalId>PNE</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#PatientNeedsToilet -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#PatientNeedsToilet">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <rdfs:label xml:lang="en">PatientNeedsToilet</rdfs:label>
+        <id rdf:datatype="&xsd;integer">118</id>
+        <externalId>PTM</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#PatientNotSober -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#PatientNotSober">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">127</id>
+        <externalId>PNN</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#PatientRetour -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#PatientRetour">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">124</id>
+        <externalId>TPW2</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#PatientWontCome -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#PatientWontCome">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">111</id>
+        <externalId>PNM</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Pickup -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Pickup">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#ActionType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#PorterCondities -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#PorterCondities">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">59</id>
+        <externalId>4xx</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#PropertyCarEmpty -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#PropertyCarEmpty">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#PropertyType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#PropertyCarFull -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#PropertyCarFull">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#PropertyType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Radiology -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Radiology">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">137</id>
+        <externalId>Rx</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Reapplication20 -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Reapplication20">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">119</id>
+        <externalId>H20</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Reapplication40 -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Reapplication40">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">120</id>
+        <externalId>H40</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Reapplication60 -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Reapplication60">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">133</id>
+        <externalId>H60</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Refused -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Refused">
+        <rdf:type rdf:resource="&tmo;TaskState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Repeat -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Repeat">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TaskMode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Request -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Request">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TaskMode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#RequestTransportNurse -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#RequestTransportNurse">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">134</id>
+        <externalId>VPL</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Requested -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Requested">
+        <rdf:type rdf:resource="&tmo;TaskState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#ResearchIsNotDue -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#ResearchIsNotDue">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">126</id>
+        <externalId>OGND</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Running -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Running">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportMode"/>
+        <id rdf:datatype="&xsd;integer">69</id>
+        <externalId>L</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Scheduled -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Scheduled">
+        <rdf:type rdf:resource="&tmo;TaskState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#SelfContained -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#SelfContained">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportMode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Single -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Single">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Sober -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Sober">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#RequirementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#TaskOperatingRoom -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#TaskOperatingRoom">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">130</id>
+        <externalId>4OK</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#TaskRadiology -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#TaskRadiology">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">129</id>
+        <externalId>4RX</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#TaskRehabilitation -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#TaskRehabilitation">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">128</id>
+        <externalId>4REV</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#TemporarilyNoPatient -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#TemporarilyNoPatient">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">112</id>
+        <externalId>PNA</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Timeout -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Timeout">
+        <rdf:type rdf:resource="&tmo;TaskState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#ToSchedule -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#ToSchedule">
+        <rdf:type rdf:resource="&tmo;TaskState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#TransportWithBedMover -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportWithBedMover">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">132</id>
+        <externalId>4BMV</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Trolley -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Trolley">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportMode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#Unreachable -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#Unreachable">
+        <rdf:type rdf:resource="&tmo;TaskState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#WaitForNurse -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#WaitForNurse">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">121</id>
+        <externalId>VPLW</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#WheelChair -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#WheelChair">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#RequirementType"/>
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportMode"/>
+        <id rdf:datatype="&xsd;integer">68</id>
+        <externalId>R</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#WrongInfusion -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#WrongInfusion">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">113</id>
+        <externalId>VINI</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#WrongNursingDossier -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#WrongNursingDossier">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">109</id>
+        <externalId>VDN</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#WrongPatientStrap -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#WrongPatientStrap">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">136</id>
+        <externalId>PBNC</externalId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://aorta.intec.ugent.be/ontology/aorta.owl#WrongRoomNumber -->
+
+    <owl:NamedIndividual rdf:about="http://aorta.intec.ugent.be/ontology/aorta.owl#WrongRoomNumber">
+        <rdf:type rdf:resource="http://aorta.intec.ugent.be/ontology/aorta.owl#TransportCode"/>
+        <id rdf:datatype="&xsd;integer">135</id>
+        <externalId>FK</externalId>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
